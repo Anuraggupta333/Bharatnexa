@@ -1,0 +1,92 @@
+:root{
+  --a-bg:#060b12;
+  --a-panel:#0c1520;
+  --a-line:rgba(151,198,230,.14);
+  --a-text:#f4f8fc;
+  --a-muted:#8ea4b8;
+  --a-cyan:#1ad4ff;
+  --a-blue:#0b7dff;
+}
+
+.admin-root, .admin-login{
+  min-height:100vh;
+  background:var(--a-bg);
+  color:var(--a-text);
+  font-family:Poppins,system-ui,sans-serif;
+}
+
+.admin-login{
+  display:grid;place-items:center;padding:24px;
+}
+.admin-login-card{
+  width:min(420px,100%);
+  background:var(--a-panel);
+  border:1px solid var(--a-line);
+  border-radius:20px;
+  padding:32px;
+}
+.admin-login-card h1{margin:8px 0 6px;font-size:28px}
+.admin-login-card p{margin:0 0 22px;color:var(--a-muted);font-size:13px}
+.admin-shell{display:grid;grid-template-columns:240px 1fr;min-height:100vh}
+.admin-side{
+  background:#05080d;border-right:1px solid var(--a-line);
+  padding:20px 14px;display:flex;flex-direction:column;gap:8px;
+}
+.admin-brand{
+  display:flex;align-items:center;gap:10px;padding:8px 10px 18px;
+  font-weight:800;letter-spacing:.04em;
+}
+.admin-brand img{height:36px;width:auto;mix-blend-mode:screen}
+.admin-nav a, .admin-nav button{
+  display:block;width:100%;text-align:left;padding:10px 12px;border-radius:10px;
+  color:var(--a-muted);background:none;border:0;cursor:pointer;font:inherit;text-decoration:none;
+}
+.admin-nav a.active, .admin-nav a:hover, .admin-nav button:hover{
+  background:rgba(26,212,255,.1);color:#fff;
+}
+.admin-main{padding:28px 32px;min-width:0}
+.admin-top{display:flex;justify-content:space-between;align-items:center;gap:16px;margin-bottom:22px}
+.admin-top h1{margin:0;font-size:26px}
+.admin-muted{color:var(--a-muted);font-size:13px}
+.admin-stats{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:12px;margin-bottom:28px}
+.admin-stat{
+  background:var(--a-panel);border:1px solid var(--a-line);border-radius:16px;padding:16px;
+}
+.admin-stat strong{display:block;font-size:28px;color:var(--a-cyan)}
+.admin-stat span{font-size:12px;color:var(--a-muted)}
+.admin-table-wrap{overflow:auto;border:1px solid var(--a-line);border-radius:16px;background:var(--a-panel)}
+.admin-table{width:100%;border-collapse:collapse;font-size:13px}
+.admin-table th, .admin-table td{padding:12px 14px;border-bottom:1px solid var(--a-line);text-align:left;vertical-align:middle}
+.admin-table th{color:var(--a-muted);font-weight:600;font-size:11px;letter-spacing:.08em;text-transform:uppercase}
+.admin-table img{width:48px;height:36px;object-fit:cover;border-radius:6px}
+.admin-actions{display:flex;gap:8px;flex-wrap:wrap}
+.admin-form{
+  display:grid;gap:12px;max-width:720px;
+  background:var(--a-panel);border:1px solid var(--a-line);border-radius:16px;padding:20px;
+}
+.admin-form label, .admin-login-card label{display:grid;gap:6px;font-size:12px;color:var(--a-muted)}
+.admin-form input, .admin-form textarea, .admin-login-card input{
+  width:100%;padding:11px 12px;border-radius:10px;border:1px solid var(--a-line);
+  background:#07111c;color:#fff;font:inherit;
+}
+.admin-form textarea{min-height:110px;resize:vertical}
+.admin-check{display:flex!important;flex-direction:row;align-items:center;gap:8px}
+.admin-row{display:flex;gap:10px;flex-wrap:wrap}
+.admin-err{color:#ff8a8a;font-size:13px;margin:0}
+.admin-ok{color:#7dffb3;font-size:13px}
+.admin-btn{
+  display:inline-flex;align-items:center;justify-content:center;
+  height:40px;padding:0 16px;border-radius:999px;border:0;cursor:pointer;font:inherit;font-weight:700;
+  background:linear-gradient(90deg,var(--a-blue),var(--a-cyan));color:#041018;
+}
+.admin-btn.ghost{
+  background:transparent;color:#fff;border:1px solid var(--a-line);font-weight:600;
+}
+.admin-btn.danger{background:#3a1218;color:#ffb4b4;border:1px solid #5a2028}
+.admin-thumb{width:72px;height:52px;object-fit:cover;border-radius:8px;border:1px solid var(--a-line)}
+@media(max-width:860px){
+  .admin-shell{grid-template-columns:1fr}
+  .admin-side{flex-direction:row;flex-wrap:wrap;border-right:0;border-bottom:1px solid var(--a-line)}
+  .admin-nav{display:flex;flex-wrap:wrap;gap:4px}
+  .admin-main{padding:18px}
+}

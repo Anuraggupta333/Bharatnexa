@@ -1,0 +1,16 @@
+import jwt from 'jsonwebtoken'
+import {User} from '../models/User.js'
+
+export async function auth(req, res, next){
+  try {
+    const token = req.cookies?.token
+    if (!token) return res.status(401).json({error: 'Unauthorized'})
+    const payload = jwt.verify(token, process.env.JWT_SECRET)
+    const user = await User.findById(payload.id).select('email')
+    if (!user) return res.status(401).json({error: 'Unauthorized'})
+    req.user = user
+    next()
+  } catch {
+    res.status(401).json({error: 'Unauthorized'})
+  }
+}
